@@ -1,0 +1,60 @@
+---
+title       : Exploratory Data Util for MTCars
+subtitle    : 
+author      : Copenhagen Coursera
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Introduction
+
+The "Exploratory Data Util for MTCars" lets you do an primitive initial exploratory data analysis of the relationship of 3 chosen variables from the MTCars data set.
+
+---
+
+## Example
+Data are presented in a colored scatter plot as shown in the example below. 
+
+```{r,  echo=FALSE, }
+library(ggplot2)
+data(mtcars)
+mtcars$am<-as.factor(mtcars$am)
+ggplot( data = mtcars,  aes_string("wt", "mpg",colour="am")) + geom_point()
+
+```
+
+---
+
+## Description of Interface
+
+Factor variables will be shown with distinct colors, continous variables will colored with a color gradient.
+
+The left side of the screen allows you to choose which feature variables to use for the X-axis, Y-axis and for the colouring of the data points. The scatter plot will update automatically when you change your variable choices in the left pane.
+
+The right side of the screen is the scatter plot itself. 
+
+When initialized the plot will have chosen WT (Weight) for X-axis, MPG (Miles per Gallon) for Y-axis and AM (Transmission). 
+
+---
+
+## The Data used
+
+A short description of the MTCars data set from the <a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html">official documentation of the MTCars data set</a> is given below. In short is a data frame with 32 observations and 11 variables.
+
+
+
+
+
+
+
+
+
+
+
+
+
